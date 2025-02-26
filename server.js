@@ -21,12 +21,12 @@ app.use(
     credentials: true,
   })
 );
-// app.options("*", (req, res) => {
-//   res.header("Access-Control-Allow-Origin", "https://task-management-woad-three.vercel.app");
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   res.sendStatus(200);
-// });
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://task-management-frontend-rho-flax.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
 app.use(express.json()); // ✅ Keep CORS before routes
 app.use(express.urlencoded({ extended: true }));
 
